@@ -218,6 +218,11 @@
 	/// Module selected by default when mech UI is opened
 	var/ui_selected_module_index
 
+	// Bubber Edit Start
+	//Special melee override for melee weapons
+	var/melee_override = FALSE
+	// Bubber Edit End
+
 /datum/armor/sealed_mecha
 	melee = 20
 	bullet = 10
