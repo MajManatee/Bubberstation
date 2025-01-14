@@ -139,12 +139,11 @@ GLOBAL_LIST_EMPTY(bluespace_slime_crystals)
 
 /obj/structure/slime_crystal/orange/process()
 	. = ..()
-	var/turf/open/location = loc
-	if(!istype(location))
+	var/turf/open/Turf = get_turf(src)
+	if(!istype(Turf))
 		return
-
-	var/datum/gas_mixture/air = location.air
-		air.temperature = T20C
+	var/datum/gas_mixture/gas = Turf.return_air()
+	gas.temperature = gas.temperature += (T0C + 200)
 
 /obj/structure/slime_crystal/purple
 	colour = "purple"
@@ -177,11 +176,12 @@ GLOBAL_LIST_EMPTY(bluespace_slime_crystals)
 	range_type = "view"
 
 /obj/structure/slime_crystal/blue/process()
-	for(var/turf/open/T in view(2, src))
-		if(isspaceturf(T))
+	for(var/turf/open/Turf in view(2, src))
+		if(isspaceturf(Turf))
 			continue
-		var/datum/gas_mixture/gas = T.return_air()
-		gas.parse_gas_string(OPENTURF_DEFAULT_ATMOS)
+		var/datum/gas_mixture/GM = SSair.parse_gas_string(Turf.initial_gas_mix, /datum/gas_mixture/turf)
+		Turf.copy_air(GM)
+		Turf.temperature = initial(Turf.temperature)
 
 /obj/structure/slime_crystal/metal
 	colour = "metal"
@@ -206,8 +206,8 @@ GLOBAL_LIST_EMPTY(bluespace_slime_crystals)
 	set_light(3)
 
 /obj/structure/slime_crystal/yellow/attacked_by(obj/item/I, mob/living/user)
-	if(istype(I,/obj/item/stock_parts/cell))
-		var/obj/item/stock_parts/cell/cell = I
+	if(istype(I,/obj/item/stock_parts/power_store/cell))
+		var/obj/item/stock_parts/power_store/cell/cell = I
 		//Punishment for greed
 		if(cell.charge == cell.maxcharge)
 			to_chat("<span class = 'danger'> You try to charge the cell, but it is already fully energized. You are not sure if this was a good idea...")
@@ -223,10 +223,10 @@ GLOBAL_LIST_EMPTY(bluespace_slime_crystals)
 	effect_desc = "It consumes plasma in the air, converting it into plasma sheets. Crystal releases and ignites a small amount of plasma when destroyed."
 
 /obj/structure/slime_crystal/darkpurple/process()
-	var/turf/T = get_turf(src)
-	if(!istype(T, /turf/open))
+	var/turf/Turf = get_turf(src)
+	if(!istype(Turf, /turf/open))
 		return
-	var/turf/open/open_turf = T
+	var/turf/open/open_turf = Turf
 	var/datum/gas_mixture/air = open_turf.return_air()
 	if(air.get_moles(GAS_PLASMA) > 15)
 		air.adjust_moles(GAS_PLASMA, -15)
@@ -426,9 +426,9 @@ GLOBAL_LIST_EMPTY(bluespace_slime_crystals)
 /obj/structure/slime_crystal/red/attacked_by(obj/item/I, mob/living/user)
 	if(blood_amt < 10)
 		return ..()
-	if(!istype(I, /obj/item/reagent_containers/glass/beaker))
+	if(!istype(I, /obj/item/reagent_containers/beaker))
 		return ..()
-	var/obj/item/reagent_containers/glass/beaker/item_beaker = I
+	var/obj/item/reagent_containers/beaker/item_beaker = I
 	if(!item_beaker.is_refillable() || (item_beaker.reagents.total_volume + 10 > item_beaker.reagents.maximum_volume))
 		return ..()
 	blood_amt -= 10
@@ -492,7 +492,7 @@ GLOBAL_LIST_EMPTY(bluespace_slime_crystals)
 /obj/structure/slime_crystal/gold
 	colour = "gold"
 	effect_desc = "Touching it will transform you into a random pet. Effects are undone when leaving the area."
-	var/list/gold_pet_options = list(/mob/living/simple_animal/pet/dog/corgi , /mob/living/simple_animal/pet/dog/pug , /mob/living/simple_animal/pet/dog/bullterrier , /mob/living/simple_animal/crab , /mob/living/simple_animal/pet/fox , /mob/living/simple_animal/pet/cat/kitten , /mob/living/simple_animal/pet/cat/space , /mob/living/simple_animal/pet/penguin/emperor , /mob/living/simple_animal/pet/penguin/baby)
+	var/list/gold_pet_options = list(/mob/living/simple_animal/pet/dog/corgi , /mob/living/simple_animal/pet/dog/pug , /mob/living/simple_animal/crab , /mob/living/simple_animal/pet/fox , /mob/living/simple_animal/pet/cat/kitten , /mob/living/simple_animal/pet/cat/space , /mob/living/simple_animal/pet/penguin/emperor , /mob/living/simple_animal/pet/penguin/baby)
 
 /obj/structure/slime_crystal/gold/attack_hand(mob/user)
 	. = ..()
