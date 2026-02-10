@@ -114,8 +114,8 @@
 /datum/supply_pack/security/ntusp
 	name = "NT-USP Crate"
 	desc = "Three stamina-draining ballistic weapons, along with 3 extra clips. Requires Security access to open."
-	cost = 2000
-	access_view = ACCESS_SECURITY
+	cost = CARGO_CRATE_VALUE * 5.5
+	access = ACCESS_SECURITY
 	contains = list(/obj/item/gun/ballistic/automatic/pistol/ntusp,
 					/obj/item/gun/ballistic/automatic/pistol/ntusp,
 					/obj/item/gun/ballistic/automatic/pistol/ntusp,
