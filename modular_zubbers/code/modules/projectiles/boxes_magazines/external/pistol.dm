@@ -38,7 +38,7 @@
 	name = "small disabling power pack"
 	desc = "A small, rechargeable power pack for the NT-USP. Synthesizes up to twelve .22HL bullets that tire targets."
 	base_icon_state = "powerpack_small"
-	icon_state = "powerpack_small"
+	icon_state = "powerpack_small-12"
 	ammo_type = /obj/item/ammo_casing/caseless/c22hl
 	max_ammo = 12
 
@@ -47,7 +47,7 @@
 	desc = "A small, rechargeable power pack for the NT-USP that has been modified. Synthesizes up to eight .22LS bullets that fire lasers."
 	ammo_type = /obj/item/ammo_casing/caseless/c22ls
 	base_icon_state = "powerpack_small-l"
-	icon_state = "powerpack_small-l"
+	icon_state = "powerpack_small_l-8"
 	max_ammo = 8
 
 /obj/item/ammo_box/magazine/recharge/ntusp/laser/empty
@@ -64,17 +64,3 @@
 		for(var/i = 0; i < bullets_to_remove; i++)
 			qdel(get_round())
 		update_icon()
-
-/obj/item/ammo_box/magazine/recharge/ntusp/update_desc()
-	. = ..()
-	desc = "[initial(desc)] It has [stored_ammo.len] shot\s left."
-
-/obj/item/ammo_box/magazine/recharge/ntusp/update_icon_state()
-	. = ..()
-	cut_overlays()
-	var/cur_ammo = ammo_count()
-	if(cur_ammo)
-		if(cur_ammo >= max_ammo)
-			add_overlay("[icon_state]_o_full")
-		else
-			add_overlay("[icon_state]_o_mid")
