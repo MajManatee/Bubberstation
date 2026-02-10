@@ -33,3 +33,33 @@
 			hit_mob.Knockdown(2 SECONDS)
 			hit_mob.apply_damage(40, BRUTE, BODY_ZONE_CHEST)
 		qdel(src)
+
+/obj/item/ammo_box/magazine/recharge/ntusp
+	name = "small power pack"
+	desc = "A small rechargable power pack that synthesizes .22HL bullets, used in the NT-USP."
+	icon_state = "powerpack_small"
+	ammo_type = /obj/item/ammo_casing/caseless/c22hl
+	max_ammo = 9
+
+/obj/item/ammo_box/magazine/recharge/ntusp/emp_act(severity) //shooting physical bullets wont stop you dying to an EMP
+	. = ..()
+	if(!(. & EMP_PROTECT_CONTENTS))
+		var/bullet_count = ammo_count()
+		var/bullets_to_remove = round(bullet_count / severity)
+		for(var/i = 0; i < bullets_to_remove; i++)
+			qdel(get_round())
+		update_icon()
+
+/obj/item/ammo_box/magazine/recharge/ntusp/update_desc()
+	. = ..()
+	desc = "[initial(desc)] It has [stored_ammo.len] shot\s left."
+
+/obj/item/ammo_box/magazine/recharge/ntusp/update_icon_state()
+	. = ..()
+	cut_overlays()
+	var/cur_ammo = ammo_count()
+	if(cur_ammo)
+		if(cur_ammo >= max_ammo)
+			add_overlay("[icon_state]_o_full")
+		else
+			add_overlay("[icon_state]_o_mid")
