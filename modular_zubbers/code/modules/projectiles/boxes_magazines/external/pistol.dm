@@ -35,11 +35,24 @@
 		qdel(src)
 
 /obj/item/ammo_box/magazine/recharge/ntusp
-	name = "small power pack"
-	desc = "A small rechargable power pack that synthesizes .22HL bullets, used in the NT-USP."
+	name = "small disabling power pack"
+	desc = "A small, rechargeable power pack for the NT-USP. Synthesizes up to twelve .22HL bullets that tire targets."
 	icon_state = "powerpack_small"
 	ammo_type = /obj/item/ammo_casing/caseless/c22hl
-	max_ammo = 9
+	max_ammo = 12
+
+/obj/item/ammo_box/magazine/recharge/ntusp/laser
+	name = "small lethal power pack"
+	desc = "A small, rechargeable power pack for the NT-USP that has been modified. Synthesizes up to eight .22LS bullets that fire lasers."
+	ammo_type = /obj/item/ammo_casing/caseless/c22ls
+	icon_state = "powerpack_small-l"
+	max_ammo = 8
+
+/obj/item/ammo_box/magazine/recharge/ntusp/laser/empty
+	start_empty = TRUE // so you cant field convert mags to full laser ones
+
+/obj/item/ammo_box/magazine/recharge/ntusp/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/recharge/ntusp/emp_act(severity) //shooting physical bullets wont stop you dying to an EMP
 	. = ..()
