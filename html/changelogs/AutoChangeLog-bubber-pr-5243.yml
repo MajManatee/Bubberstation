@@ -1,4 +1,0 @@
-author: "xPokee"
-delete-after: True
-changes:
-  - bugfix: "Fixed clown jumpsuits and under clothing not having digitigrade sprites despite us having their icons."
