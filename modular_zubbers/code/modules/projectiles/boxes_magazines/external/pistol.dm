@@ -48,7 +48,7 @@
 	desc = "A small, rechargeable power pack for the NT-USP that has been modified. Synthesizes up to eight .22LS bullets that fire lasers."
 	ammo_type = /obj/item/ammo_casing/caseless/c22ls
 	base_icon_state = "powerpack_small-l"
-	icon_state = "powerpack_small_l-8"
+	icon_state = "powerpack_small-l-8"
 	max_ammo = 8
 
 /obj/item/ammo_box/magazine/recharge/ntusp/laser/empty
