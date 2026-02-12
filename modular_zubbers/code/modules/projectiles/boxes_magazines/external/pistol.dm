@@ -37,6 +37,7 @@
 /obj/item/ammo_box/magazine/recharge/ntusp
 	name = "small disabling power pack"
 	desc = "A small, rechargeable power pack for the NT-USP. Synthesizes up to twelve .22HL bullets that tire targets."
+	icon = 'modular_zubbers/icons/obj/weapons/guns/ammo.dmi'
 	base_icon_state = "powerpack_small"
 	icon_state = "powerpack_small-12"
 	ammo_type = /obj/item/ammo_casing/caseless/c22hl
