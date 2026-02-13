@@ -3,7 +3,7 @@
 	var/sound
 	var/behavior
 	var/sharpness
-	var/speed = 1.2 // 20% worse than regular tools by default
+	var/speed = 2 // Better than normal, worse than upgraded.
 	var/requires_emag = FALSE
 
 /datum/holotool_mode/proc/on_set(obj/item/holotool/holotool)

@@ -4,6 +4,8 @@
 	icon = 'modular_zubbers/icons/obj/holotool.dmi'
 	icon_state = "holotool"
 	inhand_icon_state = "holotool"
+	worn_icon = 'modular_zubbers/icons/mob/clothing/belt.dmi'
+	worn_icon_state = "holotool"
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 	usesound = 'sound/items/pshoom/pshoom.ogg'
