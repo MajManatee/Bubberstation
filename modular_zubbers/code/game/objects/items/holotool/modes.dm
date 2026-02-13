@@ -58,11 +58,11 @@
 
 /datum/holotool_mode/welder/on_set(obj/item/holotool/holotool)
 	..()
-	holotool.AddElement(/datum/element/tool_flash, holotool.light_outer_range)
+	holotool.AddElement(/datum/element/tool_flash, holotool.light_range)
 
 /datum/holotool_mode/welder/on_unset(obj/item/holotool/holotool)
 	..()
-	holotool.RemoveElement(/datum/element/tool_flash, holotool.light_outer_range)
+	holotool.RemoveElement(/datum/element/tool_flash, holotool.light_range)
 
 ////////////////////////////////////////////////
 

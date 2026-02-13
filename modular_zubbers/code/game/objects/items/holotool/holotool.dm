@@ -55,7 +55,7 @@
 
 // Welding tool repair is currently hardcoded and not based on tool behavior
 /obj/item/holotool/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
-	if(!ishuman(interacting_with) || user.istate & ISTATE_HARM)
+	if(!ishuman(interacting_with) || user.combat_mode)
 		return NONE
 
 	if(tool_behaviour == TOOL_WELDER)
@@ -75,18 +75,19 @@
 
 	user.visible_message(span_notice("[user] starts to fix some of the dents on [attacked_humanoid == user ? user.p_their() : "[attacked_humanoid]'s"] [affecting.name]."),
 		span_notice("You start fixing some of the dents on [attacked_humanoid == user ? "your" : "[attacked_humanoid]'s"] [affecting.name]."))
-	var/use_delay = repeating ? 1 SECONDS : 0
+	var/use_delay = 1 SECONDS
 	if(user == attacked_humanoid)
 		use_delay = 5 SECONDS
 
 	if(!use_tool(attacked_humanoid, user, use_delay, volume=50, amount=1))
 		return ITEM_INTERACT_BLOCKING
 
-	if(!item_heal_robotic(attacked_humanoid, user, brute_heal = 15, burn_heal = 0))
+	if (!attacked_humanoid.item_heal(user, brute_heal = 15, burn_heal = 0, heal_message_brute = "dents", heal_message_burn = "burnt wires", required_bodytype = BODYTYPE_ROBOTIC))
 		return ITEM_INTERACT_BLOCKING
 
 	INVOKE_ASYNC(src, PROC_REF(try_heal_loop), interacting_with, user, TRUE)
 	return ITEM_INTERACT_SUCCESS
+
 
 /obj/item/holotool/use(used)
 	SHOULD_CALL_PARENT(FALSE)
@@ -143,8 +144,8 @@
 	for(var/datum/action/A as anything in actions)
 		A.build_all_button_icons()
 
-/obj/item/holotool/proc/check_menu(mob/living/user)
-	if(!istype(user) || user.incapacitated())
+/obj/item/holotool/proc/check_menu(mob/living/carbon/human/user)
+	if(!istype(user) || user.incapacitated)
 		return FALSE
 	return TRUE
 
