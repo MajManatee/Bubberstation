@@ -32,7 +32,6 @@
 
 /obj/item/holotool/Initialize(mapload)
 	. = ..()
-	AddElement(/datum/element/update_icon_updates_onmob, ITEM_SLOT_HANDS|ITEM_SLOT_BELT)
 	if(!length(possible_modes))
 		build_listing()
 
