@@ -172,7 +172,7 @@
 /obj/projectile/kinetic/repeater
 	name = "rapid kinetic force"
 	icon_state = null
-	damage = 20 // Half damage, double fire raate and a bit more range.
+	damage = 20 // Half damage, burst fire and a bit more range.
 	damage_type = BRUTE
 	armor_flag = BOMB
 	range = 4
