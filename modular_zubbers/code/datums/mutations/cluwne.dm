@@ -9,7 +9,7 @@
 		return
 	owner.dna.add_mutation(CLOWNMUT)
 	owner.dna.add_mutation(EPILEPSY)
-	owner.setOrganLoss(ORGAN_SLOT_BRAIN,199)
+	owner.set_organ_loss(ORGAN_SLOT_BRAIN,199)
 
 	var/mob/living/carbon/human/H = owner
 
