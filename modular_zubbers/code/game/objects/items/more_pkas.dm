@@ -172,7 +172,7 @@
 /obj/projectile/kinetic/repeater
 	name = "rapid kinetic force"
 	icon_state = null
-	damage = 20
+	damage = 20 // Half damage, double fire raate and a bit more range.
 	damage_type = BRUTE
 	armor_flag = BOMB
 	range = 4
@@ -181,7 +181,7 @@
 /obj/projectile/kinetic/shotgun
 	name = "split kinetic force"
 	icon_state = null
-	damage = 20
+	damage = 15 // 3 projectiles, 40 base damage. Theoretically more if all shots hit.
 	damage_type = BRUTE
 	armor_flag = BOMB
 	range = 3
@@ -190,7 +190,7 @@
 /obj/projectile/kinetic/glock
 	name = "light kinetic force"
 	icon_state = null
-	damage = 10
+	damage = 10 // Low dmg, high modularity. Can be made great, especially when dual weilded.
 	damage_type = BRUTE
 	armor_flag = BOMB
 	range = 3
@@ -199,7 +199,7 @@
 /obj/projectile/kinetic/shockwave
 	name = "concussive kinetic force"
 	icon_state = null
-	damage = 40
+	damage = 3 // 8 projectiles, apparently firing twice per shot. No reason for it to be doing that.
 	damage_type = BRUTE
 	armor_flag = BOMB
 	range = 1
