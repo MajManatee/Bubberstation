@@ -161,7 +161,7 @@
 /obj/projectile/kinetic/railgun
 	name = "hyper kinetic force"
 	icon_state = null
-	damage = 100
+	damage = 80 // Slightly less than a crusher marked hit, but ranged and really fast moving.
 	damage_type = BRUTE
 	armor_flag = BOMB
 	range = 6
