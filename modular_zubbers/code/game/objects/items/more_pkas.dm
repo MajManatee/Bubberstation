@@ -190,7 +190,7 @@
 /obj/projectile/kinetic/glock
 	name = "light kinetic force"
 	icon_state = null
-	damage = 10 // Low dmg, high modularity. Can be made great, especially when dual weilded.
+	damage = 10 // Low dmg, high modularity. Can be made great, especially when dual wielded.
 	damage_type = BRUTE
 	armor_flag = BOMB
 	range = 3
