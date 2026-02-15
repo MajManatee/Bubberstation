@@ -10,7 +10,7 @@
 
 /datum/round_event/floor_cluwne/start()
 	var/list/spawn_locs = list()
-	for(var/X in GLOB.generic_maintenance_landmark)
+	for(var/X in GLOB.generic_maintenance_landmarks)
 		spawn_locs += X
 
 	if(!spawn_locs.len)

@@ -162,13 +162,13 @@ GLOBAL_VAR_INIT(floor_cluwnes, 0)
 			to_chat(current_victim, span_warning("...edih t'nac uoY"))
 			foundVictim = TRUE
 
-	for(var/obj/mecha/hiding_spot in orange(7,src))
+	for(var/obj/vehicle/sealed/mecha/hiding_spot in orange(7,src))
 		if(hiding_spot.occupant == current_victim)
 			hiding_spot.go_out(TRUE)
 			to_chat(current_victim, span_warning("...thgif t'nac uoY"))
 			foundVictim = TRUE
 
-	for(var/obj/structure/bed/roller/cheap_escape in orange(7,src))
+	for(var/obj/item/emergency_bed/cheap_escape in orange(7,src))
 		if(cheap_escape.buckled_mobs.Find(current_victim))
 			cheap_escape.unbuckle_mob(current_victim, TRUE)
 			to_chat(current_victim, span_warning("...epacse t'nac uoY"))
@@ -207,16 +207,14 @@ GLOBAL_VAR_INIT(floor_cluwnes, 0)
 **/
 /mob/living/simple_animal/hostile/floor_cluwne/proc/Manifest()//handles disappearing and appearance anim
 	if(manifested)
-		mobility_flags &= ~MOBILITY_MOVE
-		update_mobility()
+		ADD_TRAIT(src, TRAIT_IMMOBILIZED, TRAIT_GENERIC)
 		cluwnehole = new(src.loc)
 		addtimer(CALLBACK(src, TYPE_PROC_REF(/mob/living/simple_animal/hostile/floor_cluwne, Appear)), MANIFEST_DELAY)
 	else
 		layer = GAME_PLANE
 		invisibility = INVISIBILITY_OBSERVER
 		density = FALSE
-		mobility_flags |= MOBILITY_MOVE
-		update_mobility()
+		REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, TRAIT_GENERIC)
 		if(cluwnehole)
 			qdel(cluwnehole)
 
@@ -351,7 +349,7 @@ GLOBAL_VAR_INIT(floor_cluwnes, 0)
 				to_chat(H, span_userdanger("You feel the floor closing in on your feet!"))
 				H.Paralyze(300)
 				INVOKE_ASYNC(H, TYPE_PROC_REF(/mob, emote), "scream")
-				H.adjustBruteLoss(10)
+				H.adjust_brute_loss(10)
 				manifested = TRUE
 				Manifest()
 				if(!eating)
