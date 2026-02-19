@@ -53,7 +53,7 @@
 
 /datum/holotool_mode/welder
 	name = "holo-welder"
-	sound = list('sound/items/tools/welder.ogg','sound/items/tools/welder2.ogg') //so it actually gives the expected feedback from welding
+	sound = list('sound/items/tools/welder.ogg', 'sound/items/tools/welder2.ogg') //so it actually gives the expected feedback from welding
 	behavior = TOOL_WELDER
 
 /datum/holotool_mode/welder/on_set(obj/item/holotool/holotool)

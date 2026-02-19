@@ -114,7 +114,7 @@
 	current_tool?.on_unset(src)
 	current_tool = mode
 	current_tool.on_set(src)
-	playsound(loc, 'modular_zubbers/sound/items/holotool.ogg', 100, 1, -1)
+	playsound(loc, 'modular_zubbers/sound/items/holotool.ogg', 100, TRUE)
 	update_appearance(UPDATE_ICON)
 
 /obj/item/holotool/proc/return_usable_modes()
@@ -167,7 +167,7 @@
 	if(obj_flags & EMAGGED)
 		return FALSE
 	to_chat(user, span_danger("ZZT- ILLEGAL BLUEPRINT UNLOCKED- CONTACT !#$@^%$# NANOTRASEN SUPPORT-@*%$^%!"))
-	do_sparks(5, 0, src)
+	do_sparks(5, FALSE, src)
 	obj_flags |= EMAGGED
 	return TRUE
 
