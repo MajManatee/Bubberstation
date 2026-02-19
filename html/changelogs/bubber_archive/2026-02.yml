@@ -78,3 +78,9 @@
   - bugfix: SAD can now remove organs, such as a taur body, or breasts
   - rscadd: 'A new polymorph mode: Character, which allows you to switch your character
       at your whim'
+2026-02-13:
+  KazooBard:
+  - bugfix: breaching hammers actually DO insulate you now from door shocks, when
+      you breach with them
+  xPokee:
+  - map: Removed the roundstart Plant DNA Manipulators on Box Station and Moon Station.
