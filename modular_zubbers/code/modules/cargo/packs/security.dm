@@ -103,12 +103,12 @@
 	cost = 1116
 	order_flags = ORDER_CONTRABAND
 	contains = list(/obj/item/clothing/head/helmet/metrocophelmet = 6,
-					/obj/item/clothing/suit/armor/vest/alt/sec/metrocop = 6,
-					/obj/item/clothing/under/rank/security/metrocop = 6,
-					/obj/item/clothing/gloves/color/black/security/metrocop = 6,
-					/obj/item/clothing/shoes/jackboots/combine = 6,
-					/obj/item/trash/can = 3,
-				)
+		/obj/item/clothing/suit/armor/vest/alt/sec/metrocop = 6,
+		/obj/item/clothing/under/rank/security/metrocop = 6,
+		/obj/item/clothing/gloves/color/black/security/metrocop = 6,
+		/obj/item/clothing/shoes/jackboots/combine = 6,
+		/obj/item/trash/can = 3,
+			)
 	crate_name = "benefactor supply crate"
 	discountable = SUPPLY_PACK_RARE_DISCOUNTABLE
 */
@@ -125,4 +125,3 @@
 					/obj/item/ammo_box/magazine/recharge/ntusp,
 					/obj/item/ammo_box/magazine/recharge/ntusp)
 	crate_name = "nt-usp crate"
-  
