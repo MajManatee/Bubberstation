@@ -17,7 +17,7 @@
 	caliber = LASER
 	projectile_type = /obj/projectile/bullet/c22ls
 
-/obj/projectile/bullet/c22ls //.22 LS
+/obj/projectile/bullet/c22ls //.22LS
 	name = "laser beam"
 	icon = 'modular_zubbers/icons/obj/weapons/guns/projectiles.dmi'
 	icon_state = "disabler_bullet"
