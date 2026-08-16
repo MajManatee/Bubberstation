@@ -3,15 +3,14 @@ GLOBAL_LIST_INIT(tarkon_prize_pool, list(
 	/obj/item/storage/toolbox/guncase/m44a_shotgun = 1,
 	/obj/item/storage/toolbox/guncase/m44a_ugl = 1,
 	/obj/item/storage/toolbox/guncase/smartgun = 1,
-	/obj/item/gun/ballistic/automatic/proto = 1,
 	/obj/item/storage/toolbox/guncase/goldendeagle = 1,
-	/obj/item/storage/toolbox/guncase/oldlaserrifle = 1,
-	/obj/item/gun/energy/modular_laser_rifle = 1,
-	/obj/item/gun/energy/modular_laser_rifle/carbine = 1,
-	/obj/item/gun/energy/e_gun/stun = 1,
 	/obj/item/storage/toolbox/guncase/bmsniper = 1,
+	/obj/item/storage/toolbox/guncase/quarad = 1,
+	/obj/item/storage/toolbox/guncase/bulldog = 1,
+	/obj/item/storage/toolbox/guncase/launcher = 1,
 	/obj/item/melee/energy/sword = 1,
-	/obj/item/fireaxe/energy = 1
+	/obj/item/fireaxe/energy = 1,
+	/obj/item/minigunpack = 1
 ))
 
 /obj/item/storage/toolbox/guncase/m44a
@@ -48,3 +47,18 @@ GLOBAL_LIST_INIT(tarkon_prize_pool, list(
 	name = "MODsuit Smartgun case"
 	weapon_to_spawn = /obj/item/mod/module/smartgun
 	extra_to_spawn = /obj/item/ammo_box/magazine/smartgun_drum
+
+/obj/item/storage/toolbox/guncase/quarad
+	name = "Quarad LMG gun case"
+	weapon_to_spawn = /obj/item/gun/ballistic/automatic/sol_rifle/machinegun
+	extra_to_spawn = /obj/item/ammo_box/magazine/c40sol_rifle/drum
+
+/obj/item/storage/toolbox/guncase/bulldog
+	name = "Bulldog gun case"
+	weapon_to_spawn = /obj/item/gun/ballistic/shotgun/bulldog
+	extra_to_spawn = /obj/item/ammo_box/magazine/m12g
+
+/obj/item/storage/toolbox/guncase/launcher
+	name = "Dardo-RE Launcher gun case"
+	weapon_to_spawn = /obj/item/gun/ballistic/rocketlauncher/unrestricted/nanotrasen
+	extra_to_spawn = /obj/item/ammo_casing/rocket

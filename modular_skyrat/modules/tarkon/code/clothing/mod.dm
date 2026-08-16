@@ -70,7 +70,7 @@
 	)
 
 /datum/armor/mod_theme_tarkon
-	melee = 25
+	melee = 50
 	bullet = 15
 	laser = 20
 	energy = 15
@@ -78,7 +78,7 @@
 	bio = 100
 	fire = 100
 	acid = 25
-	wound = 10
+	wound = 30
 
 
 /obj/item/mod/control/pre_equipped/tarkon
