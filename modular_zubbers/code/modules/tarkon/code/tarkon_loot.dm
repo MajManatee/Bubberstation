@@ -7,7 +7,7 @@ GLOBAL_LIST_INIT(tarkon_prize_pool, list(
 	/obj/item/storage/toolbox/guncase/bmsniper = 1,
 	/obj/item/storage/toolbox/guncase/quarad = 1,
 	/obj/item/storage/toolbox/guncase/bulldog = 1,
-	/obj/item/storage/toolbox/guncase/launcher = 1,
+	/obj/item/storage/toolbox/guncase/boarder = 1,
 	/obj/item/melee/energy/sword = 1,
 	/obj/item/fireaxe/energy = 1,
 	/obj/item/minigunpack = 1
@@ -58,7 +58,7 @@ GLOBAL_LIST_INIT(tarkon_prize_pool, list(
 	weapon_to_spawn = /obj/item/gun/ballistic/shotgun/bulldog
 	extra_to_spawn = /obj/item/ammo_box/magazine/m12g
 
-/obj/item/storage/toolbox/guncase/launcher
-	name = "Dardo-RE Launcher gun case"
-	weapon_to_spawn = /obj/item/gun/ballistic/rocketlauncher/unrestricted/nanotrasen
-	extra_to_spawn = /obj/item/ammo_casing/rocket
+/obj/item/storage/toolbox/guncase/boarder
+	name = "NT-ARG Boarder gun case"
+	weapon_to_spawn = /obj/item/gun/ballistic/automatic/ar
+	extra_to_spawn = /obj/item/ammo_box/magazine/m223
