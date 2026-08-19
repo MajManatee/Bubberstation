@@ -60,6 +60,14 @@
 	},
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/mining)
+"ao" = (
+/obj/structure/chess/blackbishop{
+	desc = "A black bishop chess piece. This one seems to be protecting the treasures within.";
+	pixel_x = 10;
+	pixel_y = 20
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/space/has_grav/port_tarkon/vault)
 "ar" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
@@ -4096,10 +4104,6 @@
 /obj/machinery/door/firedoor/solid,
 /obj/machinery/door/airlock/atmos/glass,
 /obj/effect/mapping_helpers/airlock/access/all/tarkon/general,
-/obj/effect/turf_decal/tile/yellow/half{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/yellow/full,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "np" = (
@@ -5663,6 +5667,7 @@
 /area/ruin/space/has_grav/port_tarkon/scienceaway)
 "sx" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/yellow/half,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "sy" = (
@@ -6016,6 +6021,13 @@
 /obj/machinery/door/poddoor/incinerator_atmos_main,
 /turf/open/floor/engine/vacuum,
 /area/ruin/space/has_grav/port_tarkon/atmos)
+"tB" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chess/whitebishop{
+	pixel_x = 10
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/port_tarkon/vault)
 "tC" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -7368,7 +7380,7 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/plating,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/porthall)
 "xX" = (
 /obj/structure/toilet{
@@ -9113,7 +9125,7 @@
 /obj/effect/turf_decal/tile/purple/half{
 	dir = 1
 	},
-/turf/open/floor/iron,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/porthall)
 "Dx" = (
 /obj/effect/turf_decal/tile/yellow/half{
@@ -9350,7 +9362,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/open/floor/iron,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/developement)
 "Ei" = (
 /obj/effect/turf_decal/trimline/green/filled/corner{
@@ -12874,12 +12886,12 @@
 /turf/open/floor/iron/airless,
 /area/ruin/space/has_grav/port_tarkon/storage)
 "PU" = (
+/obj/effect/turf_decal/tile/purple/half,
+/obj/structure/barricade/wooden/crude,
 /obj/machinery/door/airlock/public/glass{
 	name = "Port Primary Hallway"
 	},
-/obj/structure/barricade/wooden/crude,
-/obj/effect/turf_decal/tile/purple/half,
-/turf/open/floor/iron,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/porthall)
 "PV" = (
 /obj/structure/sign/warning/secure_area{
@@ -13369,6 +13381,13 @@
 /obj/machinery/door/firedoor/solid,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
+"Rt" = (
+/obj/structure/chess/blackbishop{
+	desc = "A black bishop chess piece. This one seems to be protecting the treasures within.";
+	pixel_x = 5
+	},
+/turf/closed/mineral/random,
+/area/ruin/space/has_grav/port_tarkon/asteroid)
 "Rv" = (
 /obj/machinery/firealarm/directional/west,
 /obj/effect/turf_decal/tile/yellow/half{
@@ -24399,8 +24418,8 @@ za
 Vt
 Vt
 Vt
-Dr
-jY
+ao
+tB
 Vt
 Vt
 Vt
@@ -26599,7 +26618,7 @@ za
 ia
 ia
 ia
-ab
+Rt
 ab
 ia
 ia
